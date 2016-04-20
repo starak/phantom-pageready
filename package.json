@@ -1,0 +1,22 @@
+{
+  "name": "phantom-pageready",
+  "version": "1.0.0",
+  "description": "PantomJS middleware to wait for page to complete",
+  "main": "pageready.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "phantomjs",
+    "onReady"
+  ],
+  "author": "starak",
+  "license": "MIT",
+  "devDependencies": {
+    "phantom": "^2.0.10",
+    "tap": "^5.7.1"
+  },
+  "dependencies": {
+    "promise": "^7.1.1"
+  }
+}

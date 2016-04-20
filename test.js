@@ -1,13 +1,6 @@
-# phantom-pageready
-PantomJS npm module middleware to wait for page to complete
-
-#### Install
-	$ npm install phantom-pageready --save
-	
-#### Usage
-```
 var phantom = require( 'phantom' );
-var pageready = require( 'phantom-pageready' );
+var pageready = require( './pageready' );
+var tap = require('tap');
 var pInstance, gPage;
 
 phantom.create()
@@ -21,6 +14,11 @@ phantom.create()
             .then( pageready.bind( page ) );
     } )
     .then( ( status )=> {
-        // Page is loaded
+        tap.ok( status );
+        gPage.evaluate( function () {
+            return document.readyState;
+        } ).then( function( readyState ) {
+            tap.equal( "complete", readyState );
+            pInstance.exit();
+        })
     } );
-```
