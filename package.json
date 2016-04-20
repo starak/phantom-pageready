@@ -7,16 +7,18 @@
     "test": "node test"
   },
   "keywords": [
+    "phantom",
     "phantomjs",
-    "onReady"
+    "onReady",
+    "pageready"
   ],
   "author": "starak",
   "license": "MIT",
   "devDependencies": {
-    "phantom": "^2.0.10",
     "tap": "^5.7.1"
   },
   "dependencies": {
+    "phantom": "^2.0.10",
     "promise": "^7.1.1"
   }
 }

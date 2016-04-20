@@ -1,5 +1,7 @@
+var phantom = require('phantom');
 var Promise = require( 'promise' );
-module.exports = function( status ) {
+
+function pageready( status ) {
     var page = this;
     return new Promise( function( resolve ) {
         var checkReadyState = function () {
@@ -17,4 +19,8 @@ module.exports = function( status ) {
         };
         checkReadyState();
     } );
-};
+}
+
+phantom.pageready = pageready;
+
+module.exports = phantom;

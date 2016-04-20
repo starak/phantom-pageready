@@ -1,5 +1,4 @@
-var phantom = require( 'phantom' );
-var pageready = require( './pageready' );
+var phantom = require( './pageready' );
 var tap = require('tap');
 var pInstance, gPage;
 
@@ -11,7 +10,7 @@ phantom.create()
     .then( ( page ) => {
         gPage = page;
         return page.open( "http://example.com" )
-            .then( pageready.bind( page ) );
+            .then( phantom.pageready.bind( page ) );
     } )
     .then( ( status )=> {
         tap.ok( status );
